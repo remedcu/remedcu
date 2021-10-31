@@ -9,17 +9,17 @@
 	</a>
 </p>
 
-- 🔭 I’m currently working on **stealth project**
+- 🔭 I’m currently working on **Origins** - A subprotocol of Sovryn
 
 - 🌱 I’m currently learning **Blockchain, Smart Contract, Cryptography, etc.**
 
-- 👯 I’m looking to collaborate on **Blockchain projects**
+- 👯 I’m looking to advise and guide on **Blockchain projects**
 
-- 🤝 I’m looking for help with **Frontend and Backend Blockchain Integrations**
+- 🤝 I’m looking for contributors with **Blockchain Frontend and Backend** skills for Origins Project.
 
 - 👨‍💻 All of my projects are available at [remedcu.com](remedcu.com)
 
-- 💬 Ask me about **Solidity**
+- 💬 Ask me about **Solidity, Tokenomics, etc.**
 
 - 📫 How to reach me **admin@remedcu.com**
 
