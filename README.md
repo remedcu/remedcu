@@ -9,13 +9,11 @@
 	</a>
 </p>
 
-- 🔭 I’m currently working on **Origins** - A subprotocol of Sovryn
+- 🔭 Ex **Kleros, Sovryn and Origins**
 
-- 🌱 I’m currently learning **Blockchain, Smart Contract, Cryptography, etc.**
+- 🌱 I’m currently learning **Blockchain, Smart Contract, Auditing, Cryptography, etc.**
 
 - 👯 I’m looking to advise and guide on **Blockchain projects**
-
-- 🤝 I’m looking for contributors with **Blockchain Frontend and Backend** skills for Origins Project.
 
 - 👨‍💻 All of my projects are available at [remedcu.com](remedcu.com)
 
