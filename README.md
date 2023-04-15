@@ -9,7 +9,9 @@
 	</a>
 </p>
 
-- 🔭 Ex **Kleros, Sovryn and Origins**
+- 🥷 Smart Contract Security Auditor in Nethermind
+
+- 🔭 Ex **Dynamite Arts, Kleros, Sovryn and Origins**
 
 - 🌱 I’m currently learning **Blockchain, Smart Contract, Auditing, Cryptography, etc.**
 
@@ -17,7 +19,7 @@
 
 - 👨‍💻 All of my projects are available at [remedcu.com](remedcu.com)
 
-- 💬 Ask me about **Solidity, Tokenomics, etc.**
+- 💬 Ask me about **Solidity, CAIRO, Tokenomics, etc.**
 
 - 📫 How to reach me **admin@remedcu.com**
 
@@ -33,9 +35,6 @@
 	</a>
 	<a href="https://stackoverflow.com/users/7520013" target="blank">
 		<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="7520013" height="30" width="40" />
-	</a>
-	<a href="https://instagram.com/iamthbp" target="blank">
-		<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="iamthbp" height="30" width="40" />
 	</a>
 </p>
 
