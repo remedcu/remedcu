@@ -3,9 +3,9 @@
 
 [![MasterHead](./i/Bitcoin.jpeg)](https://github.com/remedcu)
 
-- 🥷 Smart Contract Security Auditor | Solidity & CAIRO
+- 🥷 Smart Contract Developer & Security Auditor | Solidity & CAIRO
 
-- 🔭 Ex **Nethermind, Dynamite Arts, Kleros, Sovryn and Origins**
+- 🔭 Current: [Safe](https://safe.global/), Ex **[Nethermind](https://nethermind.io/), [Dynamite Arts](https://dynamitearts.com/), [Kleros](https://kleros.io/), [Sovryn](https://sovryn.com/) and [Origins](https://github.com/Sovryn-Origins)**
 
 - 🌱 I’m currently learning **Blockchain, Smart Contract, Auditing, Cryptography, etc.**
 
