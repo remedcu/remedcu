@@ -17,7 +17,7 @@
 
 - 📫 How to reach me **admin@remedcu.com**
 
-- 📄 Know about my experiences [shebinjohn.com](shebinjohn.com)
+- 📄 Know about my experiences [shebinjohn.com](https://shebinjohn.com)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
