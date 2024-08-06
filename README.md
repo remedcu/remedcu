@@ -11,7 +11,7 @@
 
 - 👯 I’m looking to advise and guide on **Blockchain projects**
 
-- 👨‍💻 All of my projects are available at [remedcu.com](remedcu.com)
+- 👨‍💻 All of my projects are available at [remedcu.com](https://remedcu.com)
 
 - 💬 Ask me about **Solidity, CAIRO, Tokenomics, etc.**
 
