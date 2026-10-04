@@ -1,33 +1,14 @@
-<h1 align="center">Hi 👋, I'm Shebin John</h1>
-<h3 align="center">A Learner for life!</h3>
+# Hi, I'm Shebin John
 
-[![MasterHead](./i/Bitcoin.jpeg)](https://github.com/remedcu)
+I'm a Senior Research Engineer at [Safe](https://safe.global/), working on smart-account contracts, transaction guards, and the Certora specs and security audits that check them. I'm based in Bengaluru, India, and I'm a learner for life.
 
-- 🥷 Smart Contract Developer & Security Auditor | Solidity & CAIRO
+- **Safenet:** I wrote the [staking contract](https://github.com/safe-research/safenet/blob/main/contracts/src/Staking.sol) that Safenet Beta runs on Ethereum mainnet and the [Safenet Guard](https://github.com/safe-research/safenet/blob/main/contracts/src/guard/SafenetGuard.sol), with Certora specs for both.
+- **Guards:** [Guardrail](https://github.com/safe-research/guardrail), [Fiducia](https://github.com/safe-research/fiducia) and the [Policy Engine](https://github.com/safe-research/policy-engine), transaction guards for Safe accounts.
+- **Core and modules:** the Safe core contracts ([safe-smart-account](https://github.com/safe-fndn/safe-smart-account)), the ERC-4337 and passkey modules ([safe-modules](https://github.com/safe-fndn/safe-modules)) and SAFE token locking ([safe-locking](https://github.com/safe-fndn/safe-locking)).
+- **Audits:** I coordinate the third-party audits of these contracts with Certora, Ackee, Nethermind and ack3. The reports are listed at [remedcu.com/audits](https://remedcu.com/audits/).
+- **Before:** 15+ audits at Nethermind across Solidity and Cairo, launchpad contracts at Origins, production DeFi contracts at Sovryn, and development and audits at Kleros. Published audit reports: [Blockchain-Audits](https://github.com/BlockchainAsset/Blockchain-Audits).
+- **Talks and podcasts:** [Guarding the Safe: From Guardrail to Policy Engine](https://www.youtube.com/watch?v=KFqT7gDf7-Y) at DeFi Security Summit 2025 and [Operational Security for Onchain Treasuries](https://www.youtube.com/watch?v=Ke4i_0QzVfw) on The Accountant Quits, episode 100.
+- **Ask me about:** Solidity, Cairo, Certora CVL, account abstraction (ERC-4337) and smart-contract security.
+- **Website:** [remedcu.com](https://remedcu.com), with [selected work](https://remedcu.com/work/), [audits](https://remedcu.com/audits/) and [talks](https://remedcu.com/talks/).
 
-- 🔭 Current: [Safe](https://safe.global/), Ex **[Nethermind](https://nethermind.io/), [Dynamite Arts](https://dynamitearts.com/), [Kleros](https://kleros.io/), [Sovryn](https://sovryn.com/) and [Origins](https://github.com/Sovryn-Origins)**
-
-- 🌱 I’m currently learning **Blockchain, Smart Contract, Auditing, Cryptography, etc.**
-
-- 👯 I’m looking to advise and guide on **Blockchain projects**
-
-- 👨‍💻 All of my projects are available at [remedcu.com](https://remedcu.com)
-
-- 💬 Ask me about **Solidity, CAIRO, Tokenomics, etc.**
-
-- 📫 How to reach me **admin@remedcu.com**
-
-- 📄 Know about my experiences [shebinjohn.com](https://shebinjohn.com)
-
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-	<a href="https://twitter.com/shebitweet" target="blank">
-		<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="shebitweet" height="30" width="40" />
-	</a>
-	<a href="https://linkedin.com/in/shebinjohn" target="blank">
-		<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="shebinjohn" height="30" width="40" />
-	</a>
-	<a href="https://stackoverflow.com/users/7520013" target="blank">
-		<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="7520013" height="30" width="40" />
-	</a>
-</p>
+Contact: [admin@remedcu.com](mailto:admin@remedcu.com) · [LinkedIn](https://www.linkedin.com/in/shebinjohn/) · [X](https://x.com/shebitweet)

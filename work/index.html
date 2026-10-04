@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#121315">
+<title>Work on Safenet, Safe guards and smart accounts · Shebin John</title>
+<meta name="description" content="Shebin John's work at Safe: Safenet staking and guard contracts, transaction guards, SAFE token locking, v1.5.0, the ERC-4337 and passkey modules.">
+<link rel="canonical" href="https://remedcu.com/work/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shebin John">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Work on Safenet, Safe guards and smart accounts · Shebin John">
+<meta property="og:description" content="Shebin John's work at Safe: Safenet staking and guard contracts, transaction guards, SAFE token locking, v1.5.0, the ERC-4337 and passkey modules.">
+<meta property="og:url" content="https://remedcu.com/work/">
+<meta property="og:image" content="https://remedcu.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shebin John, Senior Research Engineer at Safe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@shebitweet">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/img/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/site.css">
+<script src="/js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<!-- shared:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="wordmark" href="/">Shebin John</a>
+  <nav class="site-nav" aria-label="Site">
+    <a href="/work/" aria-current="page">Work</a>
+    <a href="/audits/">Audits</a>
+    <a href="/talks/">Talks</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" type="button" hidden>Light</button>
+  </nav>
+</header>
+<!-- /shared:header -->
+<main id="main">
+<section class="page-intro">
+  <h1>Work</h1>
+  <p class="lede">Eight pieces of work with public evidence. Each links to the pull requests, reports or addresses behind it.</p>
+</section>
+<article class="case" id="safenet">
+  <h2>Safenet: staking contract and Safenet Guard</h2>
+  <p class="kicker"><time datetime="2025-11">Nov 2025</time> to present&nbsp;· safe-research/safenet</p>
+  <p>Safenet is a decentralized transaction-security network for Safe accounts. Validators check a Safe transaction, and a guard on the account verifies their attestation onchain before the transaction runs. Safenet Beta launched in April 2026 with SAFE staking on Ethereum mainnet. The next release, Safenet Aegis, is pre-launch, and the repository is marked work in progress. I wrote 114 of its 781 commits (merge commits excluded, October 2026).</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Wrote the staking contract that Safenet Beta runs on Ethereum mainnet (<a href="https://github.com/safe-research/safenet/pull/7">#7</a>), with its tests (<a href="https://github.com/safe-research/safenet/pull/104">#104</a>), NatSpec and docs (<a href="https://github.com/safe-research/safenet/pull/65">#65</a>, <a href="https://github.com/safe-research/safenet/pull/110">#110</a>), validator-staker support (<a href="https://github.com/safe-research/safenet/pull/200">#200</a>) and the deployment and interaction scripts (<a href="https://github.com/safe-research/safenet/pull/190">#190</a>, <a href="https://github.com/safe-research/safenet/pull/193">#193</a>, <a href="https://github.com/safe-research/safenet/pull/202">#202</a>).</li>
+    <li>Wrote the Certora specs for staking (<a href="https://github.com/safe-research/safenet/pull/111">#111</a>, <a href="https://github.com/safe-research/safenet/pull/112">#112</a>, <a href="https://github.com/safe-research/safenet/pull/168">#168</a>) and committed Certora's staking audit report (<a href="https://github.com/safe-research/safenet/pull/164">#164</a>).</li>
+    <li>Wrote the Safenet Guard (<a href="https://github.com/safe-research/safenet/pull/618">#618</a>), the contract a Safe installs to check validator attestations, after two prototypes that I later removed (<a href="https://github.com/safe-research/safenet/pull/348">#348</a>, <a href="https://github.com/safe-research/safenet/pull/352">#352</a>). Then added the signature extension (<a href="https://github.com/safe-research/safenet/pull/645">#645</a>), oracle attestations (<a href="https://github.com/safe-research/safenet/pull/697">#697</a> to <a href="https://github.com/safe-research/safenet/pull/700">#700</a>) and oracleData binding (<a href="https://github.com/safe-research/safenet/pull/719">#719</a>).</li>
+    <li>Wrote the guard's Certora specs (<a href="https://github.com/safe-research/safenet/pull/787">#787</a> to <a href="https://github.com/safe-research/safenet/pull/791">#791</a>, <a href="https://github.com/safe-research/safenet/pull/863">#863</a>). Certora audited the guard at the commit from my <a href="https://github.com/safe-research/safenet/pull/728">#728</a>, and the fixes are in my <a href="https://github.com/safe-research/safenet/pull/862">#862</a>. I committed that report and Nethermind's Safenet report (<a href="https://github.com/safe-research/safenet/pull/895">#895</a>, <a href="https://github.com/safe-research/safenet/pull/986">#986</a>).</li>
+    <li>Consensus and validators: the EpochRollover library (<a href="https://github.com/safe-research/safenet/pull/468">#468</a>), decline tracking in the FROST coordinator (<a href="https://github.com/safe-research/safenet/pull/389">#389</a>), a validator EIP-7702 account (<a href="https://github.com/safe-research/safenet/pull/472">#472</a>), and validator-service features and tests (<a href="https://github.com/safe-research/safenet/pull/213">#213</a>, <a href="https://github.com/safe-research/safenet/pull/262">#262</a>, <a href="https://github.com/safe-research/safenet/pull/277">#277</a>, <a href="https://github.com/safe-research/safenet/pull/423">#423</a>). Explorer: the design system (<a href="https://github.com/safe-research/safenet/pull/296">#296</a>) and the Aegis views (<a href="https://github.com/safe-research/safenet/pull/981">#981</a>).</li>
+    <li>In safenet-utils, fixed the findings from ack3's review of the RealityVetoModule (<a href="https://github.com/safe-research/safenet-utils/pull/21">#21</a>) and committed the report (<a href="https://github.com/safe-research/safenet-utils/pull/22">#22</a>).</li>
+    <li>On the earlier cross-chain design, now deprecated (safenet-crosschain): the attestation library (<a href="https://github.com/safe-fndn/safenet-crosschain/pull/134">#134</a>) and its Certora verification (<a href="https://github.com/safe-fndn/safenet-crosschain/pull/170">#170</a>), the SafenetProtocolGuarantees contract (<a href="https://github.com/safe-fndn/safenet-crosschain/pull/261">#261</a>), CCIP messaging (<a href="https://github.com/safe-fndn/safenet-crosschain/pull/301">#301</a>) and Certora audit fixes (<a href="https://github.com/safe-fndn/safenet-crosschain/pull/443">#443</a> to <a href="https://github.com/safe-fndn/safenet-crosschain/pull/446">#446</a>).</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-research/safenet">Repository: safe-research/safenet</a></li>
+    <li><a href="https://github.com/safe-research/safenet/blob/main/contracts/src/Staking.sol">Staking.sol</a> and <a href="https://github.com/safe-research/safenet/blob/main/contracts/src/guard/SafenetGuard.sol">SafenetGuard.sol</a></li>
+    <li><a href="https://etherscan.io/address/0x115E78f160e1E3eF163B05C84562Fa16fA338509">Staking contract on Etherscan</a></li>
+    <li><a href="https://github.com/safe-research/safenet/tree/main/certora">Certora specifications</a></li>
+    <li><a href="https://github.com/safe-research/safenet/blob/main/contracts/audits/audit.md">Safenet audit index</a>, with the <a href="https://github.com/safe-research/safenet/blob/main/contracts/audits/2026_01_audit_certora_safenet_beta_staking.pdf">staking (PDF)</a> and <a href="https://github.com/safe-research/safenet/blob/main/contracts/audits/2026_08_audit_certora_safenet_guard.pdf">guard (PDF)</a> reports by Certora</li>
+    <li><a href="https://github.com/safe-research/safenet-utils">Repository: safe-research/safenet-utils</a> and <a href="https://github.com/safe-fndn/safenet-crosschain">safe-fndn/safenet-crosschain</a></li>
+    <li><a href="https://safefoundation.org/blog/safe-launches-safenet-beta">Safenet Beta announcement (April 2026)</a></li>
+  </ul>
+  <p class="kicker">Solidity&nbsp;· Certora CVL&nbsp;· Foundry&nbsp;· FROST</p>
+</article>
+<article class="case" id="safe-guards">
+  <h2>Safe guards: Guardrail, Fiducia and the Policy Engine</h2>
+  <p class="kicker"><time datetime="2025-04">Apr 2025</time> to present&nbsp;· safe-research</p>
+  <p>Three guards that check Safe transactions, built one after another. Guardrail allows <code>DELEGATECALL</code> only to allowlisted contracts, with a delay before a new one can be added. Fiducia delays new kinds of transactions unless a co-signer approves them. The Policy Engine requires every Safe transaction to satisfy a configured policy, however it was authorized. Guardrail and Fiducia are research code and are marked unaudited in their repositories. These guards are the subject of my <a href="/talks/">DeFi Security Summit 2025 talk</a>.</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Started all three repositories and wrote most of their commits: Guardrail 40 of 41, Fiducia 16 of 16, Policy Engine 54 of 83 (merge commits excluded, attributed by author email, October 2026).</li>
+    <li>Wrote the Certora specification for Guardrail.</li>
+    <li>In the Policy Engine, made the policy-check path non-view with a reentrancy gate (<a href="https://github.com/safe-research/policy-engine/pull/41">#41</a>) and added tests for the engine's security boundaries (<a href="https://github.com/safe-research/policy-engine/pull/54">#54</a>).</li>
+    <li>Published the reports of Certora's two Policy Engine audits (<a href="https://github.com/safe-research/policy-engine/pull/106">#106</a>): one of the core (August 2026) and one of the policies (September 2026).</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-research/guardrail">Repository: safe-research/guardrail</a></li>
+    <li><a href="https://github.com/safe-research/fiducia">Repository: safe-research/fiducia</a></li>
+    <li><a href="https://github.com/safe-research/policy-engine">Repository: safe-research/policy-engine</a></li>
+    <li><a href="https://github.com/safe-research/guardrail/blob/main/certora/specs/Guardrail.spec">Guardrail Certora specification</a></li>
+    <li><a href="https://github.com/safe-research/policy-engine/blob/main/audits/audit.md">Policy Engine audit notes</a>, with the <a href="https://github.com/safe-research/policy-engine/blob/main/audits/audit-report-certora-policy-engine-core.pdf">core (PDF)</a> and <a href="https://github.com/safe-research/policy-engine/blob/main/audits/audit-report-certora-individual-policies.pdf">policies (PDF)</a> reports by Certora</li>
+    <li><a href="https://safefoundation.org/blog/safe-research-guardrail-locking-down-delegate-calls">Guardrail announcement by Safe Research (August 2025)</a></li>
+  </ul>
+  <p class="kicker">Solidity&nbsp;· Safe guards&nbsp;· Certora CVL&nbsp;· Foundry&nbsp;· Hardhat</p>
+</article>
+<article class="case" id="safe-token-locking">
+  <h2>Safe token locking contract</h2>
+  <p class="kicker"><time datetime="2024-01">Jan</time> to <time datetime="2024-04">Apr 2024</time>&nbsp;· safe-fndn/safe-locking</p>
+  <p>Holders lock SAFE tokens in this contract and can unlock at any time. Each unlock waits out a cooldown period before it can be withdrawn, and <code>withdraw(maxUnlocks)</code> caps how many matured unlocks one call processes, so gas stays predictable. It is deployed on Ethereum mainnet.</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Set up the repository (<a href="https://github.com/safe-fndn/safe-locking/pull/1">#1</a>) and wrote the design spec and implementation notes (<a href="https://github.com/safe-fndn/safe-locking/pull/28">#28</a>, <a href="https://github.com/safe-fndn/safe-locking/pull/29">#29</a>, <a href="https://github.com/safe-fndn/safe-locking/pull/93">#93</a>).</li>
+    <li>Implemented lock, unlock, withdraw and the balance views, and added end-to-end tests, a 100% coverage gate and gas profiling.</li>
+    <li>Wrote Certora rules for lock, unlock and withdraw, cooldown timestamp monotonicity, a no-front-running property, and constructor and zero-address state.</li>
+    <li>Fixed the audit findings (checks-effects-interactions ordering in lock, <code>renounceOwnership</code> disabled) and committed the Ackee and Certora reports.</li>
+    <li>Tagged v1 with the mainnet deployment address.</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-fndn/safe-locking">Repository: safe-fndn/safe-locking</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-locking/tree/main/certora">Certora specification and harness</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-locking/blob/main/docs/audits/ackee-blockchain-safe-token-locking-report-1.1.pdf">Ackee audit report (PDF)</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-locking/blob/main/docs/audits/Safe%20-%20Certora%20security%20report.pdf">Certora audit report (PDF)</a></li>
+    <li><a href="https://etherscan.io/address/0x0a7CB434f96f65972D46A5c1A64a9654dC9959b2">Mainnet contract 0x0a7CB434f96f65972D46A5c1A64a9654dC9959b2 on Etherscan</a></li>
+    <li>Pull requests: <a href="https://github.com/safe-fndn/safe-locking/pull/31">lock (#31)</a>, <a href="https://github.com/safe-fndn/safe-locking/pull/35">unlock (#35)</a>, <a href="https://github.com/safe-fndn/safe-locking/pull/36">withdraw (#36)</a></li>
+    <li>Certora rules: <a href="https://github.com/safe-fndn/safe-locking/pull/84">lock (#84)</a>, <a href="https://github.com/safe-fndn/safe-locking/pull/90">no front-running (#90)</a></li>
+    <li>Audit fixes and reports: <a href="https://github.com/safe-fndn/safe-locking/pull/94">CEI ordering in lock (#94)</a>, <a href="https://github.com/safe-fndn/safe-locking/pull/95">renounceOwnership disabled (#95)</a>, <a href="https://github.com/safe-fndn/safe-locking/pull/98">reports (#98)</a></li>
+  </ul>
+  <p class="kicker">Solidity&nbsp;· Certora CVL&nbsp;· Hardhat</p>
+</article>
+<article class="case" id="contract-size">
+  <h2>Contract-size reduction in the Safe singleton</h2>
+  <p class="kicker"><time datetime="2023-12">Dec 2023</time> to <time datetime="2024-03">Mar 2024</time>&nbsp;· safe-fndn/safe-smart-account</p>
+  <p>I took about 2.7&nbsp;KB off the deployed bytecode of the Safe singleton without changing its behavior. The changes went in as a series of small commits in PR <a href="https://github.com/safe-fndn/safe-smart-account/pull/726">#726</a> ("Reducing Safe Contract Code Size"), and the PR description lists what the main changes saved.</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Made the assembly memory-safe so the contracts compile with <code>viaIR</code> and the optimizer (<a href="https://github.com/safe-fndn/safe-smart-account/pull/711">#711</a>, <a href="https://github.com/safe-fndn/safe-smart-account/pull/718">#718</a>), and moved <code>checkSignatures</code> from the CompatibilityFallbackHandler into Safe (<a href="https://github.com/safe-fndn/safe-smart-account/pull/721">#721</a>).</li>
+    <li>In the contract-size series (<a href="https://github.com/safe-fndn/safe-smart-account/pull/726">#726</a>): <code>uint256</code> for <code>v</code>, the guard storage slot read directly, <code>require</code> replaced with <code>if</code>-and-revert, tighter OwnerManager and FallbackManager code, and reverts in assembly through a shared error helper, the largest single saving.</li>
+    <li>Used <code>returndatasize()</code> directly in assembly (<a href="https://github.com/safe-fndn/safe-smart-account/pull/740">#740</a>).</li>
+    <li>Added the guard lookup during <code>preModuleExecution</code>, NatSpec for the pre- and post-execution guard checks, and tests to the module-guard return-data fix (<a href="https://github.com/safe-fndn/safe-smart-account/pull/728">#728</a>).</li>
+    <li>Restored the Certora harness and updated the signature specs as the code changed, so verification kept passing.</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-fndn/safe-smart-account">Repository: safe-fndn/safe-smart-account</a></li>
+  </ul>
+  <p class="kicker">Solidity&nbsp;· EVM&nbsp;· Yul&nbsp;· Certora CVL</p>
+</article>
+<article class="case" id="safe-v1-5-0">
+  <h2>Safe v1.5.0 release line</h2>
+  <p class="kicker"><time datetime="2024-07">Jul 2024</time> to <time datetime="2025-07">Jul 2025</time>, follow-ups in 2026&nbsp;· safe-fndn/safe-smart-account</p>
+  <p>Safe v1.5.0 is a release of the core contracts, audited by Certora and Ackee.</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Added the ExtensibleFallbackHandler, originally written by the CoW Swap team, to the core repository and adapted its tests (<a href="https://github.com/safe-fndn/safe-smart-account/pull/851">#851</a>). Added events for <code>initializer</code> and <code>saltNonce</code> (<a href="https://github.com/safe-fndn/safe-smart-account/pull/849">#849</a>) and error propagation for internal transactions (<a href="https://github.com/safe-fndn/safe-smart-account/pull/839">#839</a>).</li>
+    <li>Integrated Certora's formal verification of the migration contract into the repository and its CI (<a href="https://github.com/safe-fndn/safe-smart-account/pull/832">#832</a>).</li>
+    <li>Fixed Certora findings G-01 to G-10 (gas) and I-02 and I-03 (informational) in January 2025, and made the audit changes for v1.4.1-2 (<a href="https://github.com/safe-fndn/safe-smart-account/pull/812">#812</a>, <a href="https://github.com/safe-fndn/safe-smart-account/pull/815">#815</a>).</li>
+    <li>Added the v1.4.1 and v1.5.0 deployment addresses, wrote the <code>SafeToL2Setup</code> deployment script (<a href="https://github.com/safe-fndn/safe-smart-account/pull/823">#823</a>) and pinned the zkSync toolchain (<a href="https://github.com/safe-fndn/safe-smart-account/pull/985">#985</a>, <a href="https://github.com/safe-fndn/safe-smart-account/pull/986">#986</a>, <a href="https://github.com/safe-fndn/safe-smart-account/pull/989">#989</a>).</li>
+    <li>Added deployments of the migration contracts for many chains to <a href="https://github.com/safe-global/safe-deployments/pulls?q=is%3Apr+author%3Aremedcu+is%3Amerged">safe-deployments</a> (34 merged PRs) and new-chain verification tooling to <a href="https://github.com/safe-fndn/safe-singleton-factory/pulls?q=is%3Apr+author%3Aremedcu+is%3Amerged">safe-singleton-factory</a>.</li>
+    <li>Committed the audit reports: v1.4.1 library contracts, v1.5.0 by Certora and Ackee, and in 2026 the retroactive v1.3.0 reports by Certora (<a href="https://github.com/safe-fndn/safe-smart-account/pull/1119">#1119</a>) and Nethermind (<a href="https://github.com/safe-fndn/safe-smart-account/pull/1120">#1120</a>).</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-fndn/safe-smart-account">Repository: safe-fndn/safe-smart-account</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-smart-account/pull/854">CHANGELOG entry for v1.5.0 (#854)</a></li>
+    <li>Certora remediation series of 12: <a href="https://github.com/safe-fndn/safe-smart-account/pull/886">first (#886)</a> to <a href="https://github.com/safe-fndn/safe-smart-account/pull/897">last (#897)</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-smart-account/blob/main/docs/Safe_Audit_Report_1_5_0_Certora.pdf">v1.5.0 audit report by Certora (PDF)</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-smart-account/blob/main/docs/Safe_Audit_Report_1_5_0_Ackee.pdf">v1.5.0 audit report by Ackee (PDF)</a></li>
+  </ul>
+  <p class="kicker">Solidity&nbsp;· Certora CVL&nbsp;· Hardhat</p>
+</article>
+<article class="case" id="erc-4337-module">
+  <h2>ERC-4337 module: gas metering and verification</h2>
+  <p class="kicker"><time datetime="2023-11">Nov 2023</time> to <time datetime="2026-09">Sep 2026</time>&nbsp;· safe-fndn/safe-modules</p>
+  <p>Safe's ERC-4337 (account abstraction) module connects a Safe to the ERC-4337 EntryPoint. I measured what user operations cost through bundlers and paymasters, and worked on the module's formal verification.</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Added the <code>onlySupportedEntryPoint</code> modifier (<a href="https://github.com/safe-fndn/safe-modules/pull/158">#158</a>), gas metering for deployment and token operations (<a href="https://github.com/safe-fndn/safe-modules/pull/175">#175</a>), and hardcoded constants with tests (<a href="https://github.com/safe-fndn/safe-modules/pull/198">#198</a>), November 2023 to January 2024.</li>
+    <li>Moved the gas-metering code into the <code>examples</code> folder (<a href="https://github.com/safe-fndn/safe-modules/pull/299">#299</a>). Wrote gas-metering examples without a paymaster (<a href="https://github.com/safe-fndn/safe-modules/pull/304">#304</a>), through Gelato using <code>execTransaction</code> (<a href="https://github.com/safe-fndn/safe-modules/pull/326">#326</a>), and with Pimlico's VerifyingPaymaster, plus groundwork for an ERC-20 paymaster (<a href="https://github.com/safe-fndn/safe-modules/pull/401">#401</a>).</li>
+    <li>Fixed the EntryPoint NatSpec (<a href="https://github.com/safe-fndn/safe-modules/pull/216">#216</a>), wrote the signature-length formal verification rule (<a href="https://github.com/safe-fndn/safe-modules/pull/464">#464</a>), and upgraded the Certora CLI (<a href="https://github.com/safe-fndn/safe-modules/pull/475">#475</a>) and the Certora version the module runs on (<a href="https://github.com/safe-fndn/safe-modules/pull/502">#502</a>).</li>
+    <li>Committed the v0.3.0 audit reports by Certora (<a href="https://github.com/safe-fndn/safe-modules/pull/540">#540</a>) and Nethermind (<a href="https://github.com/safe-fndn/safe-modules/pull/541">#541</a>).</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-fndn/safe-modules">Repository: safe-fndn/safe-modules</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/tree/main/modules/4337/certora">Certora specifications for the module</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/blob/main/modules/4337/docs/v0.3.0/audit-report-certora-v3.0.pdf">v0.3.0 audit report by Certora (PDF)</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/blob/main/modules/4337/docs/v0.3.0/audit-report-nethermind-v3.0.pdf">v0.3.0 audit report by Nethermind (PDF)</a></li>
+  </ul>
+  <p class="kicker">Solidity&nbsp;· ERC-4337&nbsp;· Account abstraction&nbsp;· Certora CVL</p>
+</article>
+<article class="case" id="passkeys">
+  <h2>Passkey module for Safe</h2>
+  <p class="kicker"><time datetime="2024-03">Mar 2024</time> to <time datetime="2026-09">Sep 2026</time>&nbsp;· safe-fndn/safe-modules</p>
+  <p>This module lets a WebAuthn passkey own a Safe. Certora and Nethermind have audited it. I worked on its tests, credential creation, deployment and audit reports.</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Ported the passkey tests from the ERC-4337 work (<a href="https://github.com/safe-fndn/safe-modules/pull/335">#335</a>), updated the examples (<a href="https://github.com/safe-fndn/safe-modules/pull/336">#336</a>) and added offchain passkey verification (<a href="https://github.com/safe-fndn/safe-modules/pull/337">#337</a>).</li>
+    <li>Added passkey credential creation for Safe ownership (<a href="https://github.com/safe-fndn/safe-modules/pull/356">#356</a>) and updated versions (<a href="https://github.com/safe-fndn/safe-modules/pull/442">#442</a>).</li>
+    <li>Added Certora's formal verification specs for the module to the repository (<a href="https://github.com/safe-fndn/safe-modules/pull/496">#496</a>).</li>
+    <li>Deployed through <code>safe-singleton-factory</code> (<a href="https://github.com/safe-fndn/safe-modules/pull/477">#477</a>), added a custom deployment command (<a href="https://github.com/safe-fndn/safe-modules/pull/497">#497</a>) and removed the FreshCryptoLib dependency (<a href="https://github.com/safe-fndn/safe-modules/pull/532">#532</a>) once EIP-7951 made an onchain P-256 library unnecessary.</li>
+    <li>Committed the v0.2.1 audit reports by Certora (<a href="https://github.com/safe-fndn/safe-modules/pull/476">#476</a>) and Nethermind (<a href="https://github.com/safe-fndn/safe-modules/pull/544">#544</a>).</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-fndn/safe-modules">Repository: safe-fndn/safe-modules</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/tree/main/modules/passkey/certora">Certora specifications for the passkey module</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/blob/main/modules/passkey/docs/v0.2.1/audit-report-certora.pdf">v0.2.1 audit report by Certora (PDF)</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/blob/main/modules/passkey/docs/v0.2.1/audit-report-nethermind.pdf">v0.2.1 audit report by Nethermind (PDF)</a></li>
+  </ul>
+  <p class="kicker">Solidity&nbsp;· WebAuthn&nbsp;· Certora CVL</p>
+</article>
+<article class="case" id="formal-verification">
+  <h2>Formal verification as a habit</h2>
+  <p class="kicker"><time datetime="2023">2023</time> to <time datetime="2026">2026</time>&nbsp;· five repositories</p>
+  <p>The Certora specs and harnesses live in the same repositories as the contracts they verify, and I update them when the code changes.</p>
+  <h3>What I did</h3>
+  <ul class="bullets">
+    <li>Safe core: restored the Certora harness and updated the signature specs during the contract-size work, integrated Certora's verification of the migration contract (<a href="https://github.com/safe-fndn/safe-smart-account/pull/832">#832</a>), kept the Certora workflow current (<a href="https://github.com/safe-fndn/safe-smart-account/pull/904">#904</a>) and pinned <code>certora-cli</code> in CI.</li>
+    <li>Token locking: wrote the rules for lock, unlock and withdraw, cooldown timestamp monotonicity and no front-running.</li>
+    <li>Modules: the signature-length rule for the ERC-4337 module (<a href="https://github.com/safe-fndn/safe-modules/pull/464">#464</a>) and Certora upgrades (<a href="https://github.com/safe-fndn/safe-modules/pull/475">#475</a>, <a href="https://github.com/safe-fndn/safe-modules/pull/502">#502</a>); for the passkey module, added Certora's specs to the repository (<a href="https://github.com/safe-fndn/safe-modules/pull/496">#496</a>).</li>
+    <li>Guardrail: wrote the Certora specification for its delegate allowlist (2025).</li>
+    <li>Safenet: wrote the specs for the staking contract (<a href="https://github.com/safe-research/safenet/pull/111">#111</a>, <a href="https://github.com/safe-research/safenet/pull/168">#168</a>) and the Safenet Guard (<a href="https://github.com/safe-research/safenet/pull/787">#787</a> to <a href="https://github.com/safe-research/safenet/pull/791">#791</a>).</li>
+  </ul>
+  <h3>Evidence</h3>
+  <ul class="bullets evidence">
+    <li><a href="https://github.com/safe-fndn/safe-smart-account/tree/main/certora">Safe core: certora directory</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-locking/blob/main/certora/specs/SafeTokenLock.spec">Token locking: SafeTokenLock.spec</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/blob/main/modules/4337/certora/specs/SignatureLengthCheck.spec">ERC-4337: SignatureLengthCheck.spec</a></li>
+    <li><a href="https://github.com/safe-fndn/safe-modules/tree/main/modules/passkey/certora">Passkey: certora directory</a></li>
+    <li><a href="https://github.com/safe-research/guardrail/blob/main/certora/specs/Guardrail.spec">Guardrail: Guardrail.spec</a></li>
+  </ul>
+  <p class="kicker">Certora CVL&nbsp;· CI</p>
+</article>
+<section class="section">
+  <h2>Earlier work</h2>
+  <ul class="bullets">
+    <li>Kleros, 2020: <a href="/audits/">nine published audit reports</a>; the Blockhash RNG fallback range and escrow fee-recipient contracts; and the <a href="https://github.com/BlockchainAsset/Omenpool">OmenFarming dashboard</a>, which estimates PNK rewards for Omen liquidity providers from The Graph data.</li>
+    <li>QuillHash and CertiK, 2020: the Golden Goose and Super Token audit reports.</li>
+    <li>Sovryn, 2020 to 2021: the Development Fund, Escrow and LockedSOV contracts and audits of governance, staking and vesting (<a href="https://sovryn.com/all-things-sovryn/the-journey-of-sovryn-mutant-franklin-richards">Sovryn blog, July 2021</a>; <a href="https://github.com/DistributedCollective/Sovryn-smart-contracts/commits/development?author=powerhousefrank%40protonmail.com">commits</a>). Origins, 2021 to 2022: <a href="https://github.com/Sovryn-Origins/origins">launchpad contracts</a>.</li>
+    <li>Nethermind, 2022 to 2023: 15+ audits across Solidity and Cairo.</li>
+    <li class="muted">Older experiments from 2018 and 2019 are on <a href="https://github.com/remedcu?tab=repositories">GitHub</a>.</li>
+  </ul>
+  <p>The <a href="/audits/">Audits</a> page collects the audit reports for the Safe work above, along with the audits I did myself. For questions about any of this work, email <a href="mailto:admin@remedcu.com">admin@remedcu.com</a>.</p>
+</section>
+</main>
+<!-- shared:footer -->
+<footer class="site-footer">
+  <p>
+    <a href="https://github.com/remedcu" rel="me">GitHub</a>
+    <a href="https://www.linkedin.com/in/shebinjohn/" rel="me">LinkedIn</a>
+    <a href="https://x.com/shebitweet" rel="me">X</a>
+    <a href="mailto:admin@remedcu.com">Email</a>
+  </p>
+  <p class="mono">
+    <span>Updated October 2026</span>
+    <a href="/.well-known/security.txt">security.txt</a>
+  </p>
+</footer>
+<!-- /shared:footer -->
+</div>
+</body>
+</html>
